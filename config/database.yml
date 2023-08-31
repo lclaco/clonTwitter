@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   database: postgres
   username: postgres
-  password: Leo*15041985
+  password: 
   host: localhost
   port: 5432
 
@@ -65,7 +65,7 @@ test:
   adapter: postgresql
   database: postgres
   username: postgres
-  password: Leo*15041985
+  password: 
   host: localhost
   port: 5432
 
