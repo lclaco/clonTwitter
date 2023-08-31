@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tweets</h1>
+
+<div class="container-fluid">
+  <div class="mb-3">  
+    <%= form_with url: tweets_path, class:"d-flex", method: :get do |form| %>  
+      <%= form.text_field :query_text, placeholder: "buscar", value: params[:query_text], class:"form-control me-2" %>
+      <%= form.submit "buscar", class:"btn btn-secondary" %>
+    <% end %>
+  </div>
+  <table class="table table-dark table-striped">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Tweet</th>            
+              <th>Ver</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% @tweets.each do |tweet| %>
+          <tr>
+              <td><%= tweet.id %></td>
+              <td><%= tweet.userName %></td>
+              <td><%= tweet.description %></td>
+              
+              <td><a class="btn btn-secondary" role="button" <%= link_to "Ver tweet", tweet %></td>
+              
+          </tr>
+      
+          <% end %>
+      </tbody>
+  </table>
+  <a class="btn btn-dark" role="button" <%= link_to "NUEVO", new_tweet_path %>
+  <div class="pag-bar">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

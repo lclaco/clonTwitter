@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<h1>Ver Tweets</h1>
+<%= render @tweet %>
+
+<div>  
+  <div class="mb-3">
+    <td><a class="btn btn-dark" role="button"<%= link_to "Eliminar", @tweet, method: :delete %></td>
+  </div>
+  <div class="mb-3">
+    <td><a class="btn btn-secondary" role="button"<%= link_to "Editar", edit_tweet_path(@tweet) %> </td> 
+    <td><a class="btn btn-secondary" role="button"<%= link_to "Inicio", tweets_path %></td>
+  </div>
+</div>
